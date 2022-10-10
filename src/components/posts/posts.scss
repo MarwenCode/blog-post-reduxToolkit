@@ -1,0 +1,104 @@
+.posts{
+    width: 100%;
+    max-width: 960px;
+    // margin: 100px auto;
+    padding: 0 20px;
+    // text-align: center;
+ 
+
+   
+   
+    
+
+    .form{
+        margin-left: 500px;
+        width: 80%;
+      
+      
+     
+
+        .title input {
+            width: 60%;
+            margin: 40px 0px;
+            outline-style: none;
+    
+
+        }
+        .description textarea {
+            width: 80%;
+            height: 20vh;
+            resize: none;
+           
+    
+
+        }
+
+        .AddPostbtn {
+            margin-top: 10px;
+            width: 100px;
+            padding: 5px;
+            color: white;
+            background-color: rgb(108, 98, 170);
+            font-weight: 700;
+            border: none;
+
+
+        }
+    
+
+     
+    }
+
+    .post {
+        // margin-left: 400px;
+        display: flex;
+        width: 60%;
+        margin-left: 500px;
+       
+     
+        margin-top: 30px;
+        background-color: rgb(167, 167, 223);
+
+        .bloc {
+            .title{
+                margin-left: 10px;
+    
+            }
+            .desc{
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+    
+
+        }
+
+      
+            .icons {
+        
+                margin-left: 380px;
+              
+            
+             
+               
+
+                .editIcon{
+                    margin-left: 20px;
+                    margin-right: 10px;
+                    cursor: pointer;
+                
+
+                }
+                .deleteIcon{
+                    cursor: pointer;
+               
+    
+                }
+            }
+
+        
+
+            
+        
+
+    }
+}
