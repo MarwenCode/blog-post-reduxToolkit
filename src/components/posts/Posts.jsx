@@ -1,20 +1,30 @@
 import React, { useState } from "react";
 import { AiFillEdit, AiFillDelete } from "react-icons/ai";
 import { useDispatch,useSelector } from "react-redux";
-import { addPost } from "../../redux/postsSlice";
+import { addPost, deletePost } from "../../redux/postsSlice";
 import uuid from 'react-uuid';
 import "./posts.scss";
 const Posts = () => {
-  const [title, setTitle] = useState();
-  const [description, setDescription] = useState();
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
   const dispatch = useDispatch()
   console.log(title, description)
   const newPosts = useSelector((state) => state.posts.items)
 
   const createPost = () => {
     // e.preventDefault();
-    dispatch(addPost({id:uuid(), title, description}))
+    dispatch(addPost({id:uuid(), title, description}));
+    setTitle("")
+    setDescription("")
+  
+  
   }
+
+  const toDelete = (id) => {
+    dispatch(deletePost(id))
+
+  }
+
 
 
 
@@ -27,6 +37,7 @@ const Posts = () => {
           <input
            type="text" 
            placeholder="Enter a title"
+           value={title}
            onChange={(e) => setTitle(e.target.value)}
            
            />
@@ -35,6 +46,7 @@ const Posts = () => {
           <textarea 
           type="text"
            placeholder="Enter a desciption" 
+           value={description}
            onChange={(e) => setDescription(e.target.value)}
            
            />
@@ -50,15 +62,17 @@ const Posts = () => {
       </div>
       
         {newPosts.map((newpost) => (
-          <div className="post">
+          <div className="post" >
           <>
-            <div className="bloc">
+            <div className="bloc" >
            <h2 className="title">{newpost.title}</h2>
            <p className="desc">{newpost.description}</p>
            </div>
              <div className="icons">
-             <AiFillEdit className="editIcon"/>
-             <AiFillDelete className="deleteIcon" />
+             <AiFillEdit className="editIcon"   />
+             {/* <AiFillDelete className="deleteIcon"  onClick={() => dispatch(deletePost(newpost.id))} /> */}
+             <AiFillDelete className="deleteIcon"  onClick={() => toDelete(newpost.id)} />
+       
      
              </div>
           
