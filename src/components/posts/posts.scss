@@ -1,9 +1,10 @@
 .posts{
-    width: 100%;
+    // width: 100%;
     max-width: 960px;
     // margin: 100px auto;
     padding: 0 20px;
     // text-align: center;
+
  
 
    
@@ -51,22 +52,38 @@
 
     .post {
         // margin-left: 400px;
-        display: flex;
-        width: 60%;
+        // display: flex;
+        width: 90%;
         margin-left: 500px;
+    //    height: 100%;
+    // margin-right: -200px;
+    width: 600px;
        
      
-        margin-top: 30px;
+        margin-top: 10px;
         background-color: rgb(167, 167, 223);
 
         .bloc {
+            width: 550px;
+            // background-color: aqua;
+            overflow-x: hidden;
+            margin-left: 0px;
+           
+           
+
             .title{
                 margin-left: 10px;
     
             }
             .desc{
-                margin-left: 10px;
-                margin-right: 10px;
+                // margin-left: 10px;
+                // margin-right: 10px;
+                // min-height: 100px;
+            
+                // background-color: cadetblue;
+                // text-align: center;
+                // margin-right: 250px;
+                
             }
     
 
@@ -75,24 +92,106 @@
       
             .icons {
         
-                margin-left: 380px;
+                // margin-left: 550px;
+                // margin-bottom: 250px;
+                // display: flex;
+                // margin-top: -180px;
+                // position: relative;
+                
+              
               
             
              
-               
+               .btn{
+                background-color: rgb(167, 167, 223);
+                  margin-left: 150px;
+                  margin-right: 10px;
+                  width: 35px;
+                  border: none;
+                  width: 70px;
 
                 .editIcon{
-                    margin-left: 20px;
-                    margin-right: 10px;
+                    // margin-left: 20px;
+                    // margin-right: 10px;
                     cursor: pointer;
+                    // margin-bottom: -30px;
+                    // position: absolute;
+                    margin-right: 20px;
+                    // background-color: cadetblue;
+              
+                    
                 
 
                 }
+
+
+               }
+
+               
                 .deleteIcon{
                     cursor: pointer;
+                
                
     
                 }
+            }
+
+            .edit{
+                margin-top: 100px;
+                // margin-left: -80px;
+                width: 100%;
+                display: block;
+            
+               
+              
+               
+                // // margin-left: -300px;
+                // width: 250px;
+
+
+                .blocEdit{
+                    flex-direction: column;
+                    margin-left: 10px;
+                  
+
+
+                    .titleEdited{
+                        width: 50%;
+                        margin-bottom: 10px;
+                        margin-top: -30px;
+                     
+                      
+    
+                    }
+                    .descriptionEdited{
+                        width: 90%;
+                        resize: none;
+                        margin-right: 30px;
+                        height: 100px;
+                    
+    
+                    }
+                    .editedPostBtn{
+                        margin: 10px;
+                        width: 100px;
+                        padding: 5px;
+                        color: white;
+                        background-color: rgb(108, 98, 170);
+                        font-weight: 700;
+                        border: none;
+            
+                    }
+
+
+
+
+                }
+
+
+               
+
+
+
             }
 
         
@@ -100,5 +199,11 @@
             
         
 
+    }
+
+    .noPosts{
+        text-align: center;
+        margin-left: 550px;
+        margin-top: 20px;
     }
 }
