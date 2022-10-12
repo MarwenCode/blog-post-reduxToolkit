@@ -1,12 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { AiFillEdit, AiFillDelete } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
 import { addPost, deletePost,updatePost } from "../../redux/postsSlice";
 import uuid from "react-uuid";
 import "./posts.scss";
+
+
+
 const Posts = () => {
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
+  const [title, setTitle] = useState();
+  const [description, setDescription] = useState();
   const [updatedTitle, setupdatedTitle] = useState("");
   const [updatedescription, setUpdatedDescription] = useState("");
   const [edit, setEdit] = useState(false);
@@ -17,10 +20,26 @@ const Posts = () => {
 
   const createPost = () => {
     // e.preventDefault();
-    dispatch(addPost({ id: uuid(), title, description }));
-    setTitle("");
-    setDescription("");
+    if (title ==="" || description ==="") {
+      window.alert("you need to write something!");
+   
+    } else {
+      dispatch(addPost({ id: uuid(), title, description }));
+      setTitle("");
+      setDescription("");
+      localStorage.setItem("title",JSON.stringify(title))
+      localStorage.setItem("description",JSON.stringify(description))
+     
+
+
+    }
+   
+  
   };
+
+
+
+  
 
   const toDelete = (id) => {
     dispatch(deletePost(id));
